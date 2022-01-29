@@ -1,0 +1,268 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+/* MY OWN EXAMPLE
+button{
+   height: 50px;
+   background: red;
+}
+.example{
+   display: none;
+}
+.newExam{
+   display: block;
+} */
+
+body, .container, .article, .article-footer, .article-footer-person, .person-info, .article-footer-active, .social-icon, .share-logo {
+   display: flex;
+}
+
+ .article-footer, .social-icon, .share-logo, .article-footer-active {
+   justify-content: center;
+   align-items: center;
+}
+.attribution{
+   padding: 15px 40px;
+   text-align: center;
+}
+body{
+   flex-flow: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: hsl(210, 46%, 95%);
+}
+
+.container{
+   justify-content: space-between;
+   position: relative;
+   min-width: 768px;
+   width: 80%;
+   height: 350px;
+   border-radius: 8px;
+   background: white;
+}
+
+.image{
+   object-fit: cover;
+   object-position: left;
+   border-radius: 8px 0 0 8px;
+   width: 40%;
+}
+
+/* ARTICLE */
+.article{
+   flex-flow: column;
+   justify-content: space-between;
+   padding: 35px 50px;
+   width: 60%;
+}
+
+h1{
+   font-size: 25px;
+   color: hsl(217, 19%, 35%);
+   letter-spacing: 1px;
+}
+
+.article-body-desc{
+   font-size: 16px;
+   color: hsl(214, 17%, 51%);
+   margin: 0 0 0 8px;
+}
+
+/* ARTICLE-FOOTER */
+.article-footer{
+   justify-content: space-between;
+   height: 40px;
+   margin: 15px 0;
+}
+
+.person-img{
+   height: 100%;
+   border-radius: 50%;
+}
+
+.article-footer-person{
+   height: 100%;
+   gap: 16px;
+}
+
+.person-info{
+   flex-flow: column;
+   gap: 3.8px;
+   font-size: 13px;
+}
+
+h2{
+   color: hsl(217, 19%, 35%);
+}
+
+.date{
+   color: hsl(214, 17%, 51%);
+}
+
+/* SOCIALS */
+.article-logo{
+   border-radius: 50%;
+   padding: 5px 10px;
+   height: 30px;
+   width: 30px;
+   background-color:  hsl(210, 46%, 95%);
+   user-select: none;
+   cursor: pointer;
+}
+
+.clicked_icon{
+   background-color: hsl(217, 19%, 35%);
+}
+
+.article-footer-active{
+   flex-flow: column;
+   position: absolute;
+   bottom: 130px;
+   right: -70px;
+   height: 0;
+   overflow: hidden;
+}
+
+.visible_menu{
+   overflow: visible;
+   height: fit-content;
+}
+
+.social-icon{
+   justify-content: space-between;
+   border-radius: 8px;
+   width: 90%;
+   background-color: hsl(217, 19%, 35%);
+   font-size: 13px;
+   color: hsl(215, 22%, 59%);
+   letter-spacing: 5px;
+   padding: 15px 30px;
+}
+
+.social-icon a{
+   padding: 0 15px;
+}
+
+/* to get shape for share social icons */
+#triangle{
+   height: 0;
+   width: 0;
+   border: solid 11.2px;
+   border-color: hsl(217, 19%, 35%) transparent transparent;
+}
+
+#social, #triangle{
+   pointer-events: none /* To disable click */
+}
+
+svg path{
+   fill: hsl(217, 19%, 35%)
+}
+.clicked_arrow path{
+   fill: white
+}
+
+@media only screen and (max-width: 768px) {
+
+   .container{
+      /* flex-flow: column; */
+      display: block;
+      min-width: 320px;
+      max-width: 352px;
+      width: 90%;
+      height: fit-content;
+   }
+
+   .attribution{
+      flex-direction: row;
+   }
+   .image{
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      object-fit: cover;
+   }
+   
+   .article{
+      padding: 5px 0px;
+      width: 100%;
+   }
+   
+   .article-head h1{
+      font-size: 19px;
+      padding: 20px 25px;
+      letter-spacing: 0;
+   }
+
+   .article-body-desc{
+      font-size: 15.5px;
+   }
+   
+   .article-body{
+      margin: 10px 20px;
+
+   }
+   
+   .article-footer{
+      justify-content: space-around;
+      align-items: center;
+      gap: 0;
+      padding: 0 25px;
+      /* transition: ease-im all 0.5s; */
+      transition: ease-in-out 0.1s;
+   }
+   
+   h2{
+      font-size: 13px;
+   }
+
+   .change_state{
+      border-radius: 0 0 8px 8px;
+      padding: 0.7rem 0.7rem;
+      background-color: hsl(217, 19%, 35%);
+   }
+
+   .person-info{
+      gap: -16px;
+      
+   }
+
+   .article-footer-person{
+     width: 500px;
+   }
+
+   .article-logo{
+      z-index: 1;
+   }
+
+   .absent{
+      display: none;
+   }
+   /* for background */
+   .clicked_icon{
+      background-color: hsl(214, 17%, 51%);
+   }
+
+   .article-footer-active{
+      position: static;
+      bottom: 0;
+      left: 0;
+   }
+
+   .social-icon{
+      justify-content: start;
+      padding: 10px;
+      border-radius: 0 0 8px 8px;
+      background-color: transparent;
+   }
+
+   .visible_menu{
+      display: flex;
+   }
+   #triangle{
+      display: none;
+   }
+}
